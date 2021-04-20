@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+
+    <!-- Datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.18/datatables.min.css">
+    <script src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.18/datatables.min.js"></script>
+
+    <!-- Buttons -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.53/build/pdfmake.min.js"></script>
+    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.53/build/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+    <style>
+        #mydatatable tfoot input {
+            width: 100% !important;
+        }
+        
+        #mydatatable tfoot {
+            display: table-header-group !important;
+        }
+    </style>
+</head>
+
+<body class="container-fluid p-5">
+    <h1>CUPOS OFERTADOS POR CADA INSTITUCIÓN</h1>
+
+    <div class="table-responsive" id="mydatatable-container">
+        <table class="records_list table table-striped table-bordered table-hover" id="mydatatable">
+            <thead>
+                <tr>
+                    <th>INSTITUCIONES</th>
+                    <th>CUPOS PREESCOLAR</th>
+                    <th>CUPOS PRIMARIA</th>
+                    <th>CUPOS SECUNDARIA</th>
+                    <th>TOTAL DE CUPOS</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Rosana Londoño</th>
+                    <th>30
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Separar Cupo  </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Pre-Jardin:20</a>
+                                <a class="dropdown-item" href="#">Pre-escolar:10</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th>23
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Separar Cupo  </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Primero: 5</a>
+                                <a class="dropdown-item" href="#">Segundo: 8</a>
+                                <a class="dropdown-item" href="#">Tercero: 2</a>
+                                <a class="dropdown-item" href="#">Cuarto: 7</a>
+                                <a class="dropdown-item" href="#">Quinto: 1</a>
+                            </div>
+                        </div>
+                    </th>
+                    <th>45 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></th>
+                    <th>98 </th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>Rufino Sur</td>
+                    <td>56 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></td>
+                    <td>22 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></td>
+                    <td>15 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></td>
+                    <td>93</td>
+                </tr>
+                <tr>
+                    <td>Casd</td>
+                    <td>23 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></td>
+                    <td>50 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></td>
+                    <td>10 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></td>
+                    <td>83</td>
+                </tr>
+                <tr>
+                    <td>Santa Teresa de Jesús</td>
+                    <td>11 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></td>
+                    <td>20 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></td>
+                    <td>45 <button type="button" class="btn btn-primary btn-sm">Separar Cupo</button></td>
+                    <td>76</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#mydatatable tfoot th').each(function() {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Filtrar.." />');
+            });
+
+            var table = $('#mydatatable').DataTable({
+                "dom": 'B<"float-left"i><"float-right"f>t<"float-left"l><"float-right"p><"clearfix">',
+                "responsive": false,
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+                },
+                "order": [
+                    [0, "desc"]
+                ],
+                "initComplete": function() {
+                    this.api().columns().every(function() {
+                        var that = this;
+
+                        $('input', this.footer()).on('keyup change', function() {
+                            if (that.search() !== this.value) {
+                                that
+                                    .search(this.value)
+                                    .draw();
+                            }
+                        });
+                    })
+                },
+                "buttons": ['csv', 'excel', 'pdf', 'print']
+            });
+        });
+    </script>
+</body>
+
+</html>
