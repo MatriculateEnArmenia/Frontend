@@ -1,125 +1,540 @@
-<h2>REGISTRO DE ACUDIENTE</h2>
-<div class="holi">
-    <div class="container" id="advanced-search-form">
-        <form>
-            <div class="form-group">
-                <label for="first-name">Nombres</label>
-                <input type="text" class="form-control" placeholder="Nombres" id="first-name">
-            </div>
-            <div class="form-group">
-                <label for="last-name">Apellidos</label>
-                <input type="text" class="form-control" placeholder="Apellidos" id="last-name">
-            </div>
-            <div class="form-group">
-                <label for="country">Identificación</label>
-                <input type="text" class="form-control" placeholder="Identificación" id="country">
-            </div>
-            <div class="form-group">
-                <label for="number">Teléfono</label>
-                <input type="text" class="form-control" placeholder="Número Celular" id="number">
-            </div>
-            <div class="form-group">
-                <label for="age">Edad</label>
-                <input type="text" class="form-control" placeholder="Edad" id="age">
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" placeholder="Correo Electronico" id="email">
-            </div>
-            <div class="form-group">
-                <label for="category">Direccón</label>
-                <input type="text" class="form-control" placeholder="Dirección" id="category">
-            </div>
-            <div class="form-group">
-                <label for="education">Profesión</label>
-                <input type="text" class="form-control" placeholder="Profesión" id="education">
-            </div>
-            <div class="form-group">
-                <label for="education">Parentesco</label>
-                <input type="text" class="form-control" placeholder="Qué es del estudiante?" id="education">
-            </div>
-            <div class="form-group">
-                <!-- <label>Genero</label> -->
-                <div class="radio">
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio">Madre Cabeza de familia</label>
-                    <!-- <label class="radio-inline">
-                        <input type="radio" name="optradio"></label> -->
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search"></span> Enviar Registro</button>
-        </form>
-    </div>
-</div>
-<div class="area"></div>
-<nav class="main-menu">
-    <ul>
-        <li>
-            <a href="http://justinfarrow.com">
-                <i class="fa fa-home fa-2x"></i>
-                <span class="nav-text">
-                           INICIO
-                        </span>
-            </a>
-        </li>
-        <li class="has-subnav">
-            <a href="#">
-                <i class="fa fa-laptop fa-2x"></i>
-                <span class="nav-text">
-                            ACERCA DE MATRICÚLATE
-                        </span>
-            </a>
-        </li>
-        <li class="has-subnav">
-            <a href="#">
-                <i class="fa fa-list fa-2x"></i>
-                <span class="nav-text">
-                            PUBLICACIONES 
-                        </span>
-            </a>
-        </li>
-        <li class="has-subnav">
-            <a href="#">
-                <i class="fa fa-folder-open fa-2x"></i>
-                <span class="nav-text">
-                            INSTITUCIONES
-                        </span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-bar-chart-o fa-2x"></i>
-                <span class="nav-text">
-                            RESGISTRO DE USUARIO
-                        </span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-font fa-2x"></i>
-                <span class="nav-text">
-                           REGISTRO DE INSTITUCIONES
-                        </span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-table fa-2x"></i>
-                <span class="nav-text">
-                            ADMNISTRADOR
-                        </span>
-            </a>
-        </li>
-    </ul>
-    <ul class="logout">
-        <li>
-            <a href="#">
-                <i class="fa fa-power-off fa-2x"></i>
-                <span class="nav-text">
-                        
-                        </span>
-            </a>
-        </li>
-    </ul>
-</nav>
+<head>
+    <style>
+        body {
+            font-family: "Vegur, 'PT Sans', Verdana, sans-serif";
+            background-color: #c8c6c2;
+            margin: 0;
+            /* background: -webkit-linear-gradient(left, #5cee42, #ccc921); */
+            font-size: 20px;
+        }
+        
+        h2 {
+            background-color: #FFDB58;
+            color: rgb(12, 13, 14);
+            padding: 10px;
+            text-align: center;
+        }
+        
+        h3 {
+            font-family: Lucida Bright;
+            text-align: center;
+            font-family: 8px;
+        }
+        
+        td {
+            padding: 7px;
+        }
+        
+        input {
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        input:focus {
+            outline: none;
+            border: 1px solid forestgreen;
+        }
+        
+        input:hover {
+            box-shadow: 5px 5px 5px black;
+        }
+        
+        .button {
+            background-color: forestgreen;
+            color: #fff;
+            border: none;
+            padding: 7px
+        }
+        
+        .button:hover {
+            cursor: pointer;
+            box-shadow: 5px 5px 5px red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">REGISTRO ÚNICO DE USUARIO</h1>
+    <form>
+        <div id="personal-details">
+            <h2 align="center">DATOS ACUDIENTE</h2>
+            <table width="100%">
+                <tr>
+                    <td>Nombres</td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                    <td>Apellidos</td>
+                    <td>
+                        <input type="text" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tipo de Documento</td>
+                    <td><select id="pais" placeholder="Tipo de Documento">
+                        <option value=""></option>
+                        <option value="">Cédula Ciudadania Colombiana</option>
+                        <option value="">Cédula Ciudadania Extranjera</option>
+                        <option value="">Otro</option>
+                    </select>
+                    </td>
+                    <td>Número de Documento</td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fecha de Nacimiento</td>
+                    <td>
+                        <input type="date">
+                    </td>
+                    <td>Departamento de Nacimiento</td>
+                    <td>
+                        <select id="pais" placeholder="Lugar de Nacimiento">
+                        <option value=""></option>
+                        <option value="">Amazonas</option>
+                        <option value="">Antioquía</option>
+                        <option value="">Arauca</option>
+                        <option value="">Atlántico</option>
+                        <option value="">Bolívar</option>
+                        <option value="">Boyacá</option>
+                        <option value="">Caldas</option>
+                        <option value="">Caquetá</option>
+                        <option value="">Casanare</option>   
+                        <option value="">Cauca</option>
+                        <option value="">Cesar</option>
+                        <option value="">Chocó</option>
+                        <option value="">Córdoba</option>
+                        <option value="">Cundinamarca</option>
+                        <option value="">Guainía</option>
+                        <option value="">Guaviare: San José del Guaviare</option>
+                        <option value="">Huila</option>
+                        <option value="">La Guajira</option>
+                        <option value="">Magdalena</option>
+                        <option value="">Meta</option>
+                        <option value="">Nariño</option>
+                        <option value="">Norte de Santander</option> 
+                        <option value="">Putumayo</option>
+                        <option value="">Quindío</option>
+                        <option value="">Risaralda</option>
+                        <option value="">San Andrés y Providencia</option>
+                        <option value="">Santander</option>
+                        <option value="">Sucre</option>
+                        <option value="">Tolima</option>
+                        <option value="">Valle del Cauca</option>
+                        <option value="">Vaupés</option>
+                        <option value="">Vichada</option>
+
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dirección </td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                    <td>Municipio de Nacimiento </td>
+                    <td>
+                        <select id="pais" placeholder="Lugar de Nacimiento">
+                        <option value=""></option>
+                        <option value="">Armenia</option>
+                        <option value="">Buenavista</option>
+                        <option value="">Calarcá</option>
+                        <option value="">Circasia</option>
+                        <option value="">Córdoba</option>
+                        <option value="">Filandia</option>
+                        <option value="">Génova</option>
+                        <option value="">La Tebaida</option>
+                        <option value="">Montenegro</option>   
+                        <option value="">Quimbaya</option>
+                        <option value="">Salento</option>           
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Genero</td>
+                    <td>
+                        <input type="radio" name="gender" value="male">Masculino
+                    </td>
+                    <td>
+                        <input type="radio" name="gender" value="feale">Femenino
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ocupación </td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                    <td>Correo Electrónico</td>
+                    <td>
+                        <input type="text" placeholder="your id@gmail.com" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Contraseña</td>
+                    <td>
+                        <input type="text" placeholder="Identificación del Estudiante" size="25">
+                    </td>
+                    <td>Confirmar Contraseña</td>
+                    <td>
+                        <input type="text" placeholder="Identificación del Estudiante" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Número de Teléfono Móvil 1</td>
+                    <td>
+                        <input type="number" placeholder="" size="25">
+                    </td>
+                    <td>Número de Teléfono Móvil 2</td>
+                    <td>
+                        <input type="number" placeholder="" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Señor (A) si usted no es padre de familia digite la opción otro y llene el formulario</td>
+                    <td>
+                        <input type="radio" name="gender" value="male">Madre
+                        <input type="radio" name="gender" value="male">Padre
+                        <input type="radio" name="gender" value="feale">Otro
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adjunte Documento Acudiente</td>
+                    <td><input type="file" name="file_attach[]" multiple/></td>
+                </tr>
+
+            </table>
+        </div>
+
+        <!-- Datos Del Padre/Madre de Familia -->
+        <div id="address-details">
+            <h2>DATOS DEL PAPRE/MADRE DE FAMILIA</h2>
+            <h3>El Mejor Regalo Para Tú Hijo Se Llama Tiempo</h3>
+            <table width="100%">
+                <br>
+                <tr>
+                    <td>Nombres</td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                    <td>Apellidos</td>
+                    <td>
+                        <input type="text" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tipo de Documento</td>
+                    <td><select id="pais" placeholder="Tipo de Documento">
+                        <option value=""></option>
+                        <option value="">Cédula Ciudadania Colombiana</option>
+                        <option value="">Cédula Ciudadania Extranjera</option>
+                        <option value="">Otra</option>
+                    </select>
+                    </td>
+                    <td>Número de Documento</td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fecha de Nacimiento</td>
+                    <td>
+                        <input type="date">
+                    </td>
+                    <td>Lugar de Nacimiento</td>
+                    <td>
+                        <select id="pais" placeholder="Lugar de Nacimiento">
+                        <option value=""></option>
+                        <option value="">Amazonas</option>
+                        <option value="">Antioquía</option>
+                        <option value="">Arauca</option>
+                        <option value="">Atlántico</option>
+                        <option value="">Bolívar</option>
+                        <option value="">Boyacá</option>
+                        <option value="">Caldas</option>
+                        <option value="">Caquetá</option>
+                        <option value="">Casanare</option>   
+                        <option value="">Cauca</option>
+                        <option value="">Cesar</option>
+                        <option value="">Chocó</option>
+                        <option value="">Córdoba</option>
+                        <option value="">Cundinamarca</option>
+                        <option value="">Guainía</option>
+                        <option value="">Guaviare: San José del Guaviare</option>
+                        <option value="">Huila</option>
+                        <option value="">La Guajira</option>
+                        <option value="">Magdalena</option>
+                        <option value="">Meta</option>
+                        <option value="">Nariño</option>
+                        <option value="">Norte de Santander</option> 
+                        <option value="">Putumayo</option>
+                        <option value="">Quindío</option>
+                        <option value="">Risaralda</option>
+                        <option value="">San Andrés y Providencia</option>
+                        <option value="">Santander</option>
+                        <option value="">Sucre</option>
+                        <option value="">Tolima</option>
+                        <option value="">Valle del Cauca</option>
+                        <option value="">Vaupés</option>
+                        <option value="">Vichada</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dirección</td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                    <td>Municipio de Nacimiento </td>
+                    <td>
+                        <select id="pais" placeholder="Lugar de Nacimiento">
+                        <option value=""></option>
+                        <option value="">Armenia</option>
+                        <option value="">Buenavista</option>
+                        <option value="">Calarcá</option>
+                        <option value="">Circasia</option>
+                        <option value="">Córdoba</option>
+                        <option value="">Filandia</option>
+                        <option value="">Génova</option>
+                        <option value="">La Tebaida</option>
+                        <option value="">Montenegro</option>   
+                        <option value="">Quimbaya</option>
+                        <option value="">Salento</option>           
+                    </select>
+                    </td>
+                    <tr>
+                        <td colspan="2">Genero</td>
+                        <td>
+                            <input type="radio" name="gender" value="male">Masculino
+                        </td>
+                        <td>
+                            <input type="radio" name="gender" value="feale">Femenino
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ocupación </td>
+                        <td>
+                            <input type="text" placeholder="" size="25">
+                        </td>
+                        <td>Correo Electrónico</td>
+                        <td>
+                            <input type="text" placeholder="your id@gmail.com" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Contraseña</td>
+                        <td>
+                            <input type="text" placeholder="Identificación del Estudiante" size="25">
+                        </td>
+                        <td>Confirmar Contraseña</td>
+                        <td>
+                            <input type="text" placeholder="Identificación del Estudiante" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Madre Cabeza de Hogar</td>
+                        <td>
+                            <input type="checkbox" value="english">Si
+                        </td>
+                        <td>
+                            <input type="checkbox" value="bengali">No
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Número de Teléfono Móvil 1</td>
+                        <td>
+                            <input type="number" placeholder="" size="25">
+                        </td>
+                        <td>Número de Teléfono Móvil 2</td>
+                        <td>
+                            <input type="number" placeholder="" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Adjunte Documento Padre</td>
+                        <td><input type="file" name="file_attach[]" multiple/></td>
+                        <td>Dirección </td>
+                        <td>
+                            <input type="text" placeholder="" size="25">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Adjunte Documento Madre</td>
+                        <td><input type="file" name="file_attach[]" multiple/></td>
+                    </tr>
+            </table>
+        </div>
+        <!-- Registro del Estudiante -->
+        <div id="other-details">
+            <h2>REGISTRO DEL ESTUDIANTE</h2>
+            <table width="100%">
+                <tr>
+                    <td>Nombres</td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                    <td>Apellidos</td>
+                    <td>
+                        <input type="text" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tipo de Documento</td>
+                    <td>
+                        <select id="pais" placeholder="Tipo de Documento">
+                        <option value=""></option>
+                        <option value="">Cédula Ciudadania Colombiana</option>
+                        <option value="">Cédula Ciudadania Extranjera</option>
+                        <option value="">Otra</option>
+                    </select>
+                    </td>
+                    <td>Número de Documento</td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fecha de Nacimiento</td>
+                    <td>
+                        <input type="date">
+                    </td>
+                    <td>Lugar de Nacimiento</td>
+                    <td>
+                        <select id="pais" placeholder="Lugar de Nacimiento">
+                        <option value=""></option>
+                        <option value="">Amazonas</option>
+                        <option value="">Antioquía</option>
+                        <option value="">Arauca</option>
+                        <option value="">Atlántico</option>
+                        <option value="">Bolívar</option>
+                        <option value="">Boyacá</option>
+                        <option value="">Caldas</option>
+                        <option value="">Caquetá</option>
+                        <option value="">Casanare</option>   
+                        <option value="">Cauca</option>
+                        <option value="">Cesar</option>
+                        <option value="">Chocó</option>
+                        <option value="">Córdoba</option>
+                        <option value="">Cundinamarca</option>
+                        <option value="">Guainía</option>
+                        <option value="">Guaviare: San José del Guaviare</option>
+                        <option value="">Huila</option>
+                        <option value="">La Guajira</option>
+                        <option value="">Magdalena</option>
+                        <option value="">Meta</option>
+                        <option value="">Nariño</option>
+                        <option value="">Norte de Santander</option> 
+                        <option value="">Putumayo</option>
+                        <option value="">Quindío</option>
+                        <option value="">Risaralda</option>
+                        <option value="">San Andrés y Providencia</option>
+                        <option value="">Santander</option>
+                        <option value="">Sucre</option>
+                        <option value="">Tolima</option>
+                        <option value="">Valle del Cauca</option>
+                        <option value="">Vaupés</option>
+                        <option value="">Vichada</option>
+
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dirección</td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                    <td>Municipio de Nacimiento </td>
+                    <td>
+                        <select id="pais" placeholder="Lugar de Nacimiento">
+                        <option value=""></option>
+                        <option value="">Armenia</option>
+                        <option value="">Buenavista</option>
+                        <option value="">Calarcá</option>
+                        <option value="">Circasia</option>
+                        <option value="">Córdoba</option>
+                        <option value="">Filandia</option>
+                        <option value="">Génova</option>
+                        <option value="">La Tebaida</option>
+                        <option value="">Montenegro</option>   
+                        <option value="">Quimbaya</option>
+                        <option value="">Salento</option>           
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Genero</td>
+                    <td>
+                        <input type="radio" name="gender" value="male">Masculino
+                    </td>
+                    <td>
+                        <input type="radio" name="gender" value="feale">Femenino
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nacionalidad </td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                    <td>Tipo de Sangre </td>
+                    <td>
+                        <input type="text" placeholder="" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Número de Teléfono Móvil 1</td>
+                    <td>
+                        <input type="number" placeholder="" size="25">
+                    </td>
+                    <td>Número de Teléfono Móvil 2</td>
+                    <td>
+                        <input type="number" placeholder="" size="25">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adjunte Documento Del Estudiante</td>
+                    <td><input type="file" name="file_attach[]" multiple/></td>
+                    <td><label for="subject"><span>Comuna</span>
+		            <select name="subject">
+		            <option value="1">1</option>
+		            <option value="2">2</option>
+		            <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+		            </select>
+	                </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adjunte Notas del Último Periodo</td>
+                    <td><input type="file" name="file_attach[]" multiple/></td>
+                </tr>
+                <tr>
+                    <td>Adjunte Recibo de la Energia</td>
+                    <td><input type="file" name="file_attach[]" multiple/></td>
+                </tr>
+                <br>
+                <br>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-success">ENVIAR</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">CANCELAR</button>
+                        <td>
+                            <button type="button" class="btn btn-warning">REGISTRAR OTRO ESTUDIANTE</button>
+                        </td>
+                        <td></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <br>
+    <!-- Main Footer -->
+    <h3>La Institución Educativa lo Contactará Luego de Vereficar los Datos Ingresados</h3>
+</body>
